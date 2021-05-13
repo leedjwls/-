@@ -1,0 +1,18 @@
+while True:
+  a = int(input('하나의 이진수를 입력하세요: '))
+  str_a = str(a)
+  list=[]
+  result = 0
+
+  for i in range(len(str_a)):
+    list.append((a % (10**(i+1))) // (10**i))
+    if list[i] == 0 or list[i] == 1:
+      result += ((a % (10**(i+1))) // (10**i)) * (2**i)
+    else:
+      print('잘못된 이진수입니다. 다시 입력하세요.')
+      break
+
+  if i == (len(str_a)-1):
+    break
+    
+print('이진수', a, '을 십진법으로 표현한 값 =', result)
